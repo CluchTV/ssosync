@@ -519,7 +519,7 @@ func (s *syncGSuite) SyncGroupsUsers(query string) error {
 		// In mid-2022, AWS started using the prefix "AWS" for administrative
 		// purposes. Without this, ssosync deletes these administrative groups.
 		if awsGroup.DisplayName[:3] == "AWS" {
-			log.Warn("Refusing to delete")
+			log.Warn("Refusing to delete group with the prefix 'AWS'")
 			continue
 		}
 
